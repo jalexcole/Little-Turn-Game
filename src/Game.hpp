@@ -1,7 +1,8 @@
+#pragma once
 #include <string>
 
 
-class Game{
+class Game {
   public:
     Game();
     void initialize();
