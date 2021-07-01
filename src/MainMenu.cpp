@@ -22,5 +22,5 @@ void MainMenu::setBackground() {
     std::string path = "assets/vfx/background.png";
     Image background = LoadImage(path.c_str());
     bgTexture = LoadTextureFromImage(background);
-    UnloadImage(background);
+    UnloadImage(background); // delete png from memory; 
 }

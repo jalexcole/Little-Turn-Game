@@ -1,6 +1,12 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/alex/Dropbox/dev/Little-Turn-Game'
- 
-make: 'bin/LittleTurnGame' is up to date.
+mkdir -p build
+echo " g++  -g -Wall -Ofast -std=c++17 -I include -c -o build/MainMenu.o src/MainMenu.cpp"; g++  -g -Wall -Ofast -std=c++17 -I include -c -o build/MainMenu.o src/MainMenu.cpp
+mkdir -p build
+echo " g++  -g -Wall -Ofast -std=c++17 -I include -c -o build/Game.o src/Game.cpp"; g++  -g -Wall -Ofast -std=c++17 -I include -c -o build/Game.o src/Game.cpp
+mkdir -p build
+echo " g++  -g -Wall -Ofast -std=c++17 -I include -c -o build/main.o src/main.cpp"; g++  -g -Wall -Ofast -std=c++17 -I include -c -o build/main.o src/main.cpp
+echo " Linking..."
+echo " g++  build/MainMenu.o build/Game.o build/main.o -o bin/LittleTurnGame -lraylib"; g++  build/MainMenu.o build/Game.o build/main.o -o bin/LittleTurnGame -lraylib
 make: Leaving directory '/home/alex/Dropbox/dev/Little-Turn-Game'
  

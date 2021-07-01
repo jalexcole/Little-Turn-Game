@@ -22,7 +22,7 @@ void Game::initialize() {
     SetConfigFlags(FLAG_WINDOW_HIGHDPI);
     InitWindow(1280, 720, "Little Turn Game");
     InitAudioDevice();
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(600);               // Set our game to run at 60 frames-per-second
     currentState = MAINMENU;
 
     gameStates.push_back("MainMenu");

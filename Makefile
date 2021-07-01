@@ -11,7 +11,7 @@ TARGET := bin/LittleTurnGame
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall -O3 -std=c++17
+CFLAGS := -g -Wall -Ofast -std=c++17
 LIB := -lraylib
 INC := -I include
 

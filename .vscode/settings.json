@@ -1,3 +1,10 @@
 {
-    "makefile.extensionOutputFolder": "./.vscode"
+    "makefile.extensionOutputFolder": "./.vscode",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/alex/Dropbox/dev/Little-Turn-Game/bin",
+            "binaryPath": "/home/alex/Dropbox/dev/Little-Turn-Game/bin/LittleTurnGame",
+            "binaryArgs": []
+        }
+    ]
 }
