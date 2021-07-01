@@ -1,6 +1,7 @@
-#include <Game.hpp>
+#include "Game.hpp"
 
 int main() {
-   Game game();
+    Game* game = new Game();
+    game->start();
     return 0;
 }

@@ -6,18 +6,23 @@ CC := g++ # This is the main compiler
 # CC := clang --analyze # and comment out the linker last line for sanity
 SRCDIR := src
 BUILDDIR := build
-TARGET := bin/runner
+TARGET := bin/LittleTurnGame
  
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall
-LIB := -pthread
+CFLAGS := -g -Wall -O3 -std=c++17
+LIB := -lraylib
 INC := -I include
 
-ifeq ($(OS),Darwin)
-  LIB += -framework CoreVideo -framework OpenGL -framework IOKit -framework Cocoa -framework Carbon
-endif
+UNAME := $(shell uname)
+
+#ifeq ($(UNAME), Darwin)
+#	@echo "Adding Mac Commands..."
+#	LIB += -framework IOKit -framework Cocoa -framework OpenGL `pkg-config --libs --cflags raylib`
+#else
+#	
+#endif
 
 $(TARGET): $(OBJECTS)
 	@echo " Linking..."
@@ -40,3 +45,17 @@ ticket:
 	$(CC) $(CFLAGS) spikes/ticket.cpp $(INC) $(LIB) -o bin/ticket
 
 .PHONY: clean
+
+
+run:
+	make
+	./$(TARGET)
+
+
+package:
+	ifeq ($(UNAME), Darwin)
+	@echo "Building DMG...";
+	# hdiutil create -size 32m -fs HFS+ -volname  my_app_writeable.dmg hdiutil attach test.dmg
+	else
+	@echo "Not on mac";	
+	endif

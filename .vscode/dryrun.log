@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/alex/Dropbox/dev/Little-Turn-Game'
+ 
+make: 'bin/LittleTurnGame' is up to date.
+make: Leaving directory '/home/alex/Dropbox/dev/Little-Turn-Game'
+ 
