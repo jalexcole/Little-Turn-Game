@@ -22,7 +22,7 @@ void Game::initialize() {
     SetConfigFlags(FLAG_WINDOW_HIGHDPI);
     InitWindow(1280, 720, "Little Turn Game");
     InitAudioDevice();
-    SetTargetFPS(600);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(600);  // Set our game to run at 60 frames-per-second
     currentState = MAINMENU;
 
     gameStates.push_back("MainMenu");
@@ -66,26 +66,24 @@ void Game::changeState(std::string) {
 }
 
 void Game::render() {
-    switch (currentState)
-    {
-    case MAINMENU:
-        /* code */
-        mainMenu->render();
-        break;
-    
-    case EXIT:
-        CloseWindow();
-        break;
-    default:
-        break;
-    }
+    switch (currentState) {
+        case MAINMENU:
+            /* code */
+            mainMenu->render();
+            break;
+        
+        case EXIT:
+            CloseWindow();
+            break;
+        default:
+            break;
+        }
 }
 
 void Game::update() {
-    switch (currentState)
-    {
+    switch (currentState) {
     case MAINMENU:
-        /* code */
+        mainMenu->update();
         break;
     
     case EXIT:

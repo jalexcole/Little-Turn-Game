@@ -13,6 +13,10 @@ class MainMenu {
 
   private:
     // Image background;
+    Music music;
     Texture2D bgTexture;
     void setBackground();
+    void checkInput();
+    void selectUp();
+    void selectDown();
 };

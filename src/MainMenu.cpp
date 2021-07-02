@@ -7,7 +7,8 @@ MainMenu::MainMenu() {
     screenWidth = GetScreenWidth();
 
     setBackground();
-    
+    music = LoadMusicStream("assets/sfx/HeroicMinority.mp3");
+    PlayMusicStream(music);
 }
 
 void MainMenu::render() {
@@ -15,7 +16,7 @@ void MainMenu::render() {
 }
 
 void MainMenu::update() {
-
+    UpdateMusicStream(music);
 }
 
 void MainMenu::setBackground() {
@@ -24,3 +25,44 @@ void MainMenu::setBackground() {
     bgTexture = LoadTextureFromImage(background);
     UnloadImage(background); // delete png from memory; 
 }
+
+void MainMenu::checkInput() {
+    if (IsKeyDown(KEY_DOWN) || IsKeyPressed(KEY_S)) {
+        selectDown();
+    }
+
+    if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W)) {
+        selectUp();
+    }
+
+    if (IsKeyPressed(KEY_ENTER)) {
+        select();
+    }
+}
+
+void MainMenu::selectUp() {
+    if (selectedIndex > 0) {
+        selectedIndex--;
+    } else {
+        selectedIndex = options.size() - 1;
+    }
+}
+
+void MainMenu::selectDown() {
+        if (selectedIndex >= options.size() - 1) {
+        selectedIndex = 0;
+    } else {
+        selectedIndex++;
+    }
+}
+
+
+
+    void select() {
+        selected = selectedIndex;
+    }
+
+    void reset() {
+        selectedIndex = 0;
+        selected = -1;
+    }
