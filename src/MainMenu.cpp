@@ -41,28 +41,28 @@ void MainMenu::checkInput() {
 }
 
 void MainMenu::selectUp() {
-    if (selectedIndex > 0) {
-        selectedIndex--;
-    } else {
-        selectedIndex = options.size() - 1;
-    }
+    // if (selectedIndex > 0) {
+    //     selectedIndex--;
+    // } else {
+    //     selectedIndex = options.size() - 1;
+    // }
 }
 
 void MainMenu::selectDown() {
-        if (selectedIndex >= options.size() - 1) {
-        selectedIndex = 0;
-    } else {
-        selectedIndex++;
-    }
+    //     if (selectedIndex >= options.size() - 1) {
+    //     selectedIndex = 0;
+    // } else {
+    //     selectedIndex++;
+    // }
 }
 
 
 
     void select() {
-        selected = selectedIndex;
+    // selected = selectedIndex;
     }
 
     void reset() {
-        selectedIndex = 0;
-        selected = -1;
+        // selectedIndex = 0;
+        // selected = -1;
     }
