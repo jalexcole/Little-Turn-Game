@@ -4,7 +4,7 @@ Used this example for making the make file and project structure https://hiltmon
 
 Rules of the game have been established. Controller based game, 30 minutes of game time, and at least ten turns for a turn based game.
 
-### Day 1 July, 1st
+### Day 1 - July, 1st
 TODO: Need to set up git sub modules for the lib folder to get desired libraries and configure make to pull them incase that they are not there.
 
 Make needs a way to compile with files in folder.
@@ -20,3 +20,4 @@ I am thinking that I can load all textures to graphics memmory from the start.
 6. Tile rendering
 7. External Libraries through git submodules. 
 8. Set up git ignore for external Libraries. 
+9. Global sound handler that works with the scene manager
