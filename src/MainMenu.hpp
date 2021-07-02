@@ -19,4 +19,6 @@ class MainMenu {
     void checkInput();
     void selectUp();
     void selectDown();
+    void select();
+    void reset();
 };

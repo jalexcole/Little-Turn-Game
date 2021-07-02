@@ -58,11 +58,11 @@ void MainMenu::selectDown() {
 
 
 
-    void select() {
-    // selected = selectedIndex;
-    }
+void MainMenu::select() {
+// selected = selectedIndex;
+}
 
-    void reset() {
-        // selectedIndex = 0;
-        // selected = -1;
-    }
+void MainMenu::reset() {
+    // selectedIndex = 0;
+    // selected = -1;
+}
