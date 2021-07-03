@@ -7,8 +7,8 @@ MainMenu::MainMenu() {
     screenWidth = GetScreenWidth();
 
     setBackground();
-    music = LoadMusicStream("assets/sfx/HeroicMinority.mp3");
-    PlayMusicStream(music);
+    std::string music = "assets/sfx/HeroicMinority.mp3";
+    // soundManager->setMusic(music);
 }
 
 void MainMenu::render() {
@@ -16,7 +16,7 @@ void MainMenu::render() {
 }
 
 void MainMenu::update() {
-    UpdateMusicStream(music);
+    
 }
 
 void MainMenu::setBackground() {

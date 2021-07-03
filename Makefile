@@ -1,9 +1,6 @@
-#
-# TODO: Move `libmongoclient.a` to /usr/local/lib so this can work on production servers
-#
- 
+
 CC := g++ # This is the main compiler
-# CC := clang --analyze # and comment out the linker last line for sanity
+# CC := clang # --analyze # and comment out the linker last line for sanity
 SRCDIR := src
 BUILDDIR := build
 TARGET := bin/LittleTurnGame
@@ -11,20 +8,19 @@ TARGET := bin/LittleTurnGame
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall -Og -std=c++17
-LIB := -lraylib
+CFLAGS := -g -Wall -O0 -std=c++17
+LIB = -lraylib # -framework IOKit -framework Cocoa -framework OpenGL `pkg-config --libs
 INC := -I include
 
 UNAME := $(shell uname)
 
-#ifeq ($(UNAME), Darwin)
-#	@echo "Adding Mac Commands..."
-#	LIB += -framework IOKit -framework Cocoa -framework OpenGL `pkg-config --libs --cflags raylib`
-#else
-#	
-#endif
+ifeq ($(UNAME),Darwin)
+	@echo "Adding Mac Commands..."
+	LIB += -framework IOKit -framework Cocoa -framework OpenGL `pkg-config --libs --cflags raylib`	
+endif
 
 $(TARGET): $(OBJECTS)
+	
 	@echo " Linking..."
 	@echo " $(CC) $^ -o $(TARGET) $(LIB)"; $(CC) $^ -o $(TARGET) $(LIB)
 
@@ -53,9 +49,9 @@ run:
 
 
 package:
-	ifeq ($(UNAME), Darwin)
-	@echo "Building DMG...";
-	# hdiutil create -size 32m -fs HFS+ -volname  my_app_writeable.dmg hdiutil attach test.dmg
-	else
-	@echo "Not on mac";	
-	endif
+	# ifeq $(UNAME), Darwin
+	# 	@echo "Building DMG...";
+	# # hdiutil create -size 32m -fs HFS+ -volname  my_app_writeable.dmg hdiutil attach test.dmg
+	# else
+	# @echo "Not on mac";	
+	# endif

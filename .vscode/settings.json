@@ -6,5 +6,17 @@
             "binaryPath": "/home/alex/Dropbox/dev/Little-Turn-Game/bin/LittleTurnGame",
             "binaryArgs": []
         }
-    ]
+    ],
+    "files.associations": {
+        "*.tcc": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "sstream": "cpp",
+        "vector": "cpp"
+    }
 }

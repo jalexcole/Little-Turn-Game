@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include "SoundManager.hpp"
 
 class MainMenu {
   public:
@@ -13,7 +14,7 @@ class MainMenu {
 
   private:
     // Image background;
-    Music music;
+    // SoundManager soundManager;
     Texture2D bgTexture;
     void setBackground();
     void checkInput();
